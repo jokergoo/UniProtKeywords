@@ -70,7 +70,7 @@ load_keyword_genesets = function(taxon_id = 9606, category = NULL) {
 
 ALL_KEYWORDS_CATEGORIES = c("Biological process", "Cellular component", "Coding sequence diversity", 
 	                        "Developmental stage", "Disease", "Domain", "Ligand", "Molecular function", 
-	                        "Post-translational modification", "Technical term")
+	                        "Post-translational modification", "PTM", "Technical term")
 
 
 .onLoad <- function(lib, pkg) {
