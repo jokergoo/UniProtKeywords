@@ -1,0 +1,33 @@
+\name{kw_terms}
+\docType{data}
+\alias{kw_terms}
+\title{
+Keyword terms
+}
+\description{
+Keyword terms
+}
+\usage{
+data(kw_terms)
+}
+\details{
+Data is from \url{https://www.uniprot.org/docs/keywlist.txt}
+}
+\value{
+A list of keyword terms. Each keyword term has the following elements:
+
+\itemize{
+  \item Identifier
+  \item Accession
+  \item Description
+  \item Synonyms
+  \item Gene_ontology
+  \item Hierarchy
+  \item WWW_site
+  \item Category
+}
+}
+\examples{
+data(kw_terms)
+kw_terms[[1]]
+}
