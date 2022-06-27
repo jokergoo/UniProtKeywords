@@ -132,6 +132,7 @@ tb = read.table("uniprot_keywords.txt", sep = "\t", header = T)
 
 format_geneset = function(tb2) {
 	g = tb2$Entrez_Gene_ID
+	g = as.character(g)
 	keywords = tb2$Keywords
 	keywords = gsub("\\.$", "", keywords)
 	keywords = strsplit(keywords, "; ")

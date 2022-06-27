@@ -25,7 +25,8 @@ The package has five datasets. The first contains basic information of every key
 
 ```{r}
 data(kw_terms)
-kw_terms[[1]]
+length(kw_terms)
+kw_terms[["Cell cycle"]]
 ```
 
 
