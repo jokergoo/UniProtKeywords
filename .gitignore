@@ -1,1 +1,4 @@
-inst/extdata/process
+inst/extdata/process/uniprot_keywords.txt
+inst/extdata/process/uniprot_sprot.dat.gz
+inst/extdata/process/keywlist.txt
+.DS_Store
