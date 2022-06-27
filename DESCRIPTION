@@ -1,6 +1,6 @@
 Package: UniProtKeywords
 Type: Package
-Title: UniProtKeywords
+Title: Keywords from the UniProt database
 Version: 0.99.0
 Date: 2022-06-27
 Authors@R: person("Zuguang", "Gu", email = "z.gu@dkfz.de", role = c("aut", "cre"),

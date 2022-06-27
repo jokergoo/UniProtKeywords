@@ -18,13 +18,13 @@ devtools::install_github("jokergoo/UniProtKeywords")
 ### Usage
 
 
-First load the package.
+First load the package:
 
 ```r
 library(UniProtKeywords)
 ```
 
-The package has five datasets. The first contains basic information of every keyword term:
+The package has five data objects. The first contains basic information of every keyword term:
 
 ```r
 data(kw_terms)
