@@ -65,6 +65,7 @@ load_keyword_genesets = function(taxon_id = 9606, category = NULL) {
 		}, TRUE)
 		lt = lt[l]
 	}
+	lt = lapply(lt, as.character)
 	return(lt)
 }
 
