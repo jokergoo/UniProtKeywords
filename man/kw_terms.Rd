@@ -11,7 +11,9 @@ Keyword terms
 data(kw_terms)
 }
 \details{
-Data is from \url{https://www.uniprot.org/docs/keywlist.txt}
+Data is from \url{https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/docs/keywlist.txt}
+
+Last updated: 2022-09-06.
 }
 \value{
 A list of keyword terms. Each keyword term has the following elements:
