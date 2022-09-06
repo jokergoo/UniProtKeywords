@@ -70,6 +70,7 @@ load_keyword_genesets = function(taxon_id = 9606, category = NULL, as_table = FA
 		}, TRUE)
 		lt = lt[l]
 	}
+	lt = lapply(lt, as.character)
 
 	if(as_table) {
 		tb = data.frame(keyword = rep(names(lt), times = vapply(lt, length, 0)),
@@ -77,6 +78,7 @@ load_keyword_genesets = function(taxon_id = 9606, category = NULL, as_table = FA
 		rownames(tb) = NULL
 		return(tb)
 	} else {
+
 		return(lt)
 	}
 }
