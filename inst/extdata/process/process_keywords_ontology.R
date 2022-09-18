@@ -173,11 +173,6 @@ for(t in unique(tb$Taxon_ID)) {
 
 
 
-foo = sort(table(tb$Taxon_ID), decreasing = TRUE)
-cat(names(foo[foo >= 1000]), sep = "\n")
-
-
-
 
 
 

@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">UniProtKeywords</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.99.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.99.3</span>
       </span>
     </div>
 
@@ -69,7 +69,7 @@
       <h1 data-toc-skip>Keywords from the UniProt database</h1>
                         <h4 data-toc-skip class="author">Zuguang Gu (<a href="mailto:z.gu@dkfz.de" class="email">z.gu@dkfz.de</a>)</h4>
             
-            <h4 data-toc-skip class="date">2022-09-07</h4>
+            <h4 data-toc-skip class="date">2022-09-18</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/jokergoo/UniProtKeywords/blob/HEAD/vignettes/UniProtKeywords.Rmd" class="external-link"><code>vignettes/UniProtKeywords.Rmd</code></a></small>
       <div class="hidden name"><code>UniProtKeywords.Rmd</code></div>
@@ -82,12 +82,20 @@
 <p>First load the package:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jokergoo/UniProtKeywords" class="external-link">UniProtKeywords</a></span><span class="op">)</span></span></code></pre></div>
-<p>The package has five data objects. The first contains basic information of every keyword term:</p>
+<p>First the release and source information of the data:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">UniProtKeywords</span></span></code></pre></div>
+<pre><code><span><span class="co">## UniProt Keywords</span></span>
+<span><span class="co">##   Release: 2022_03 of 2022-08-03 </span></span>
+<span><span class="co">##   Source: https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/docs/keywlist.txt </span></span>
+<span><span class="co">##   Built date: 2022-09-06 </span></span>
+<span><span class="co">##   Number of keywords: 1201</span></span></code></pre>
+<p>The package has five data objects. The first contains basic information of every keyword term:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">kw_terms</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">kw_terms</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 1201</span></span></code></pre>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">kw_terms</span><span class="op">[[</span><span class="st">"Cell cycle"</span><span class="op">]</span><span class="op">]</span></span></code></pre></div>
 <pre><code><span><span class="co">## $Identifier</span></span>
 <span><span class="co">## [1] "Cell cycle"</span></span>
@@ -107,7 +115,7 @@
 <span><span class="co">## $Category</span></span>
 <span><span class="co">## [1] "Biological process"</span></span></code></pre>
 <p>The other four contain hierarchical structures of the keyword terms:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">kw_parents</span><span class="op">)</span></span>
 <span><span class="va">kw_parents</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span></span></code></pre></div>
 <pre><code><span><span class="co">## $`2Fe-2S`</span></span>
@@ -115,7 +123,7 @@
 <span><span class="co">## </span></span>
 <span><span class="co">## $`3D-structure`</span></span>
 <span><span class="co">## [1] "Technical term"</span></span></code></pre>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">kw_children</span><span class="op">)</span></span>
 <span><span class="va">kw_children</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span></span></code></pre></div>
 <pre><code><span><span class="co">## $`ATP synthesis`</span></span>
@@ -123,7 +131,7 @@
 <span><span class="co">## </span></span>
 <span><span class="co">## $`ATP-binding`</span></span>
 <span><span class="co">## [1] "Helicase"</span></span></code></pre>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">kw_ancestors</span><span class="op">)</span></span>
 <span><span class="va">kw_ancestors</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span></span></code></pre></div>
 <pre><code><span><span class="co">## $`Iron-sulfur`</span></span>
@@ -131,7 +139,7 @@
 <span><span class="co">## </span></span>
 <span><span class="co">## $`2Fe-2S`</span></span>
 <span><span class="co">## [1] "Iron-sulfur"   "Metal-binding" "Ligand"        "Iron"</span></span></code></pre>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">kw_offspring</span><span class="op">)</span></span>
 <span><span class="va">kw_offspring</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span></span></code></pre></div>
 <pre><code><span><span class="co">## $`Iron-sulfur`</span></span>
@@ -142,7 +150,7 @@
 <span><span class="co">## [4] "4Fe-4S"                 "Heme"                   "LIM domain"            </span></span>
 <span><span class="co">## [7] "Metal-thiolate cluster" "Zinc-finger"</span></span></code></pre>
 <p>The <strong>UniProtKeywords</strong> package has also compiled genesets of keywords for some species, which can get by the function <code><a href="../reference/load_keyword_genesets.html">load_keyword_genesets()</a></code>. The argument is the taxon ID of a species. The full set of supported organisms can be found in the document of <code><a href="../reference/load_keyword_genesets.html">load_keyword_genesets()</a></code>.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gl</span> <span class="op">=</span> <span class="fu"><a href="../reference/load_keyword_genesets.html">load_keyword_genesets</a></span><span class="op">(</span><span class="fl">9606</span><span class="op">)</span></span>
 <span><span class="va">gl</span><span class="op">[</span><span class="fl">3</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span>  <span class="co"># because gl[1:2] has a very long output, here we print gl[3:4]</span></span></code></pre></div>
 <pre><code><span><span class="co">## $`3Fe-4S`</span></span>
@@ -155,7 +163,7 @@
 <span><span class="co">## [25] "4728"   "4723"   "4682"   "10101"  "5558"   "5471"   "5980"   "55316" </span></span>
 <span><span class="co">## [33] "91543"  "51750"  "6390"   "441250" "55253"</span></span></code></pre>
 <p>Argument <code>as_table</code> can be set to <code>TRUE</code>, then <code><a href="../reference/load_keyword_genesets.html">load_keyword_genesets()</a></code> returns a two-column data frame.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tb</span> <span class="op">=</span> <span class="fu"><a href="../reference/load_keyword_genesets.html">load_keyword_genesets</a></span><span class="op">(</span><span class="fl">9606</span>, as_table <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">tb</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##   keyword   gene</span></span>
@@ -169,32 +177,32 @@
 <ol style="list-style-type: decimal">
 <li>Sizes of keyword genesets:</li>
 </ol>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="va">gl</span>, <span class="va">length</span><span class="op">)</span><span class="op">)</span>, log <span class="op">=</span> <span class="st">"x"</span>, </span>
 <span>    xlab <span class="op">=</span> <span class="st">"Size of keyword genesets"</span>,</span>
 <span>    ylab <span class="op">=</span> <span class="st">"Number of keywords"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="UniProtKeywords_files/figure-html/unnamed-chunk-6-1.png" width="672"></p>
+<p><img src="UniProtKeywords_files/figure-html/unnamed-chunk-7-1.png" width="672"></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Numbers of words in keywords:</li>
 </ol>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">gregexpr</a></span><span class="op">(</span><span class="st">" |-|/"</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">gl</span><span class="op">)</span><span class="op">)</span>, <span class="va">length</span><span class="op">)</span><span class="op">)</span>, </span>
 <span>    xlab <span class="op">=</span> <span class="st">"Number of words in keywords"</span>,</span>
 <span>    ylab <span class="op">=</span> <span class="st">"Number of keywords"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="UniProtKeywords_files/figure-html/unnamed-chunk-7-1.png" width="672"></p>
+<p><img src="UniProtKeywords_files/figure-html/unnamed-chunk-8-1.png" width="672"></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Numbers of characters in keywords:</li>
 </ol>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nchar.html" class="external-link">nchar</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">gl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>, </span>
 <span>    xlab <span class="op">=</span> <span class="st">"Number of characters in keywords"</span>,</span>
 <span>    ylab <span class="op">=</span> <span class="st">"Number of keywords"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="UniProtKeywords_files/figure-html/unnamed-chunk-8-1.png" width="672"></p>
+<p><img src="UniProtKeywords_files/figure-html/unnamed-chunk-9-1.png" width="672"></p>
 <p>Session info:</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## R version 4.2.0 (2022-04-22)</span></span>
 <span><span class="co">## Platform: x86_64-apple-darwin17.0 (64-bit)</span></span>
@@ -211,7 +219,7 @@
 <span><span class="co">## [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## other attached packages:</span></span>
-<span><span class="co">## [1] UniProtKeywords_0.99.2</span></span>
+<span><span class="co">## [1] UniProtKeywords_0.99.3</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## loaded via a namespace (and not attached):</span></span>
 <span><span class="co">##  [1] knitr_1.39        magrittr_2.0.3    R6_2.5.1          ragg_1.2.2       </span></span>

@@ -1,3 +1,6 @@
+S3method("print", "UniProtKeywords_info")
+export("print.UniProtKeywords_info")
+export("UniProtKeywords")
 export("load_keyword_genesets")
 
 importFrom("utils", "data")

@@ -1,4 +1,33 @@
 
+# == title (variable:UniProtKeywords)
+# Release and source information
+#
+# == example
+# UniProtKeywords
+UniProtKeywords = list(
+	release = "2022_03 of 2022-08-03",
+	built_date = "2022-09-06",
+	source = "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/docs/keywlist.txt"
+)
+class(UniProtKeywords) = "UniProtKeywords_info"
+
+# == title
+# Print the UniProtKeywords object
+#
+# == param
+# -x A ``UniProtKeyword`` object.
+# -... Other arguments
+#
+# == example
+# UniProtKeywords
+print.UniProtKeywords_info = function(x, ...) {
+	cat("UniProt Keywords\n")
+	cat("  Release:", x$release, "\n")
+	cat("  Source:", x$source, "\n")
+	cat("  Built date:", x$built_date, "\n")
+	cat("  Number of keywords:", length(kw_terms), "\n")
+}
+
 # == title (data:kw_terms)
 # Keyword terms
 #

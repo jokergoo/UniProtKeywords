@@ -21,6 +21,12 @@ First load the package:
 library(UniProtKeywords)
 ```
 
+First the release and source information of the data:
+
+```{r}
+UniProtKeywords
+```
+
 The package has five data objects. The first contains basic information of every keyword term:
 
 ```{r}

@@ -19,6 +19,9 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/reference/UniProtKeywords.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
   </url>
   <url>
@@ -38,5 +41,8 @@
   </url>
   <url>
     <loc>/reference/load_keyword_genesets.html</loc>
+  </url>
+  <url>
+    <loc>/reference/print.UniProtKeywords_info.html</loc>
   </url>
 </urlset>
