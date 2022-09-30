@@ -24,8 +24,8 @@ print.UniProtKeywords_info = function(x, ...) {
 	cat("UniProt Keywords\n")
 	cat("  Release:", x$release, "\n")
 	cat("  Source:", x$source, "\n")
-	cat("  Built date:", x$built_date, "\n")
 	cat("  Number of keywords:", length(kw_terms), "\n")
+	cat("  Built date:", x$built_date, "\n")
 }
 
 # == title (data:kw_terms)
