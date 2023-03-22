@@ -5,8 +5,8 @@
 # == example
 # UniProtKeywords
 UniProtKeywords = list(
-	release = "2022_03 of 2022-08-03",
-	built_date = "2022-09-06",
+	release = "2023_01 of 22-Feb-2023",
+	built_date = "2023-03-22",
 	source = "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/docs/keywlist.txt"
 )
 class(UniProtKeywords) = "UniProtKeywords_info"
@@ -34,7 +34,7 @@ print.UniProtKeywords_info = function(x, ...) {
 # == details
 # Data is from https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/docs/keywlist.txt
 #
-# Last updated: 2022-09-06.
+# Last updated: 2023-03-22.
 #
 # == value
 # A list of keyword terms. Each keyword term has the following elements:
