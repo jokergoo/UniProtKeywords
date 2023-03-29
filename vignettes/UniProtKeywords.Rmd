@@ -67,6 +67,13 @@ tb = load_keyword_genesets(9606, as_table = TRUE)
 head(tb)
 ```
 
+To make it more flexible, you can also provide the Latin name or the common name of the species.
+
+```{r}
+gl2 = load_keyword_genesets("mouse")
+gl2[3:4]
+```
+
 We can simply check some statistics.
 
 1. Sizes of keyword genesets:

@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">UniProtKeywords</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.99.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.2.1</span>
       </span>
     </div>
 
@@ -59,7 +59,7 @@
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>taxon_id</dt>
-<dd><p>The taxon ID.</p></dd>
+<dd><p>The taxon ID. To make it more flexible, you can also provide the Latin name or the normal name of the species.</p></dd>
 
   <dt>category</dt>
 <dd><p>Category of keywords. There are the following categories: "Biological process", "Cellular component", "Coding sequence diversity", "Developmental stage", "Disease", "Domain", "Ligand", "Molecular function", "Post-translational modification", "Technical term".</p></dd>
@@ -72,32 +72,32 @@
     <div id="details">
     <h2>Details</h2>
     <p>Following are the supported species (with more than 1000 genes annotated):</p>
-<ul><li><p>"9606": Homo sapiens / human</p></li>
-<li><p>"10090": Mus musculus / house mouse</p></li>
-<li><p>"3702": Arabidopsis thaliana / thale cress</p></li>
+<ul><li><p>"10090": Mus musculus / house mouse</p></li>
 <li><p>"10116": Rattus norvegicus / Norway rat</p></li>
-<li><p>"559292": Saccharomyces cerevisiae S288C / strain, budding yeasts</p></li>
-<li><p>"9913": Bos taurus / cattle</p></li>
-<li><p>"284812": Schizosaccharomyces pombe 972h- / strain, ascomycete fungi</p></li>
+<li><p>"208964": Pseudomonas aeruginosa PAO1 / strain, g-proteobacteria</p></li>
 <li><p>"224308": Bacillus subtilis subsp. subtilis str. 168 / strain, firmicutes</p></li>
-<li><p>"83333": Escherichia coli K-12 / strain, enterobacteria</p></li>
-<li><p>"44689": Dictyostelium discoideum / species, cellular slime molds</p></li>
+<li><p>"237561": Candida albicans SC5314 / strain, budding yeasts</p></li>
+<li><p>"243232": Methanocaldococcus jannaschii DSM 2661 / strain, euryarchaeotes</p></li>
+<li><p>"284812": Schizosaccharomyces pombe 972h- / strain, ascomycete fungi</p></li>
+<li><p>"3702": Arabidopsis thaliana / thale cress</p></li>
 <li><p>"39947": Oryza sativa Japonica Group / (Japanese rice), monocots</p></li>
+<li><p>"44689": Dictyostelium discoideum / species, cellular slime molds</p></li>
+<li><p>"559292": Saccharomyces cerevisiae S288C / strain, budding yeasts</p></li>
 <li><p>"6239": Caenorhabditis elegans / species, nematodes</p></li>
+<li><p>"623": Shigella flexneri / species, enterobacteria</p></li>
 <li><p>"7227": Drosophila melanogaster / (fruit fly), species, flies</p></li>
-<li><p>"8355": Xenopus laevis / (African clawed frog), species, frogs &amp; toads</p></li>
 <li><p>"7955": Danio rerio / (zebrafish), species, bony fishes</p></li>
 <li><p>"83332": Mycobacterium tuberculosis H37Rv / strain, high G+C Gram-positive bacteria</p></li>
-<li><p>"9601": Pongo abelii / (Sumatran orangutan), species, primates</p></li>
+<li><p>"83333": Escherichia coli K-12 / strain, enterobacteria</p></li>
 <li><p>"83334": Escherichia coli O157:H7 / serotype, enterobacteria</p></li>
-<li><p>"9031": Gallus gallus / (chicken), species, birds</p></li>
-<li><p>"99287": Salmonella enterica subsp. enterica serovar Typhimurium str. LT2 / strain, enterobacteria</p></li>
-<li><p>"623": Shigella flexneri / species, enterobacteria</p></li>
+<li><p>"8355": Xenopus laevis / (African clawed frog), species, frogs &amp; toads</p></li>
 <li><p>"8364": Xenopus tropicalis / (tropical clawed frog), species, frogs &amp; toads</p></li>
-<li><p>"208964": Pseudomonas aeruginosa PAO1 / strain, g-proteobacteria</p></li>
-<li><p>"243232": Methanocaldococcus jannaschii DSM 2661 / strain, euryarchaeotes</p></li>
+<li><p>"9031": Gallus gallus / (chicken), species, birds</p></li>
+<li><p>"9601": Pongo abelii / (Sumatran orangutan), species, primates</p></li>
+<li><p>"9606": Homo sapiens / human</p></li>
 <li><p>"9823": Sus scrofa / (pig), species, even-toed ungulates</p></li>
-<li><p>"237561": Candida albicans SC5314 / strain, budding yeasts</p></li>
+<li><p>"9913": Bos taurus / cattle</p></li>
+<li><p>"99287": Salmonella enterica subsp. enterica serovar Typhimurium str. LT2 / strain, enterobacteria</p></li>
 </ul></div>
     <div id="value">
     <h2>Value</h2>
@@ -130,6 +130,7 @@ If <code>as_table</code> is set to <code>TRUE</code>, it returns a two-column da
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4  2Fe-2S  55847</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5  2Fe-2S 493856</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6  2Fe-2S 284106</span>
+<span class="r-in"><span><span class="co"># load_keyword_genesets("mouse")</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -144,7 +145,7 @@ If <code>as_table</code> is set to <code>TRUE</code>, it returns a two-column da
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
