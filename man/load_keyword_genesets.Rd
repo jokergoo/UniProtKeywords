@@ -11,7 +11,7 @@ load_keyword_genesets(taxon_id = 9606, category = NULL, as_table = FALSE)
 }
 \arguments{
 
-  \item{taxon_id}{The taxon ID.}
+  \item{taxon_id}{The taxon ID. To make it more flexible, you can also provide the Latin name or the normal name of the species.}
   \item{category}{Category of keywords. There are the following categories: "Biological process", "Cellular component", "Coding sequence diversity", "Developmental stage", "Disease", "Domain", "Ligand", "Molecular function", "Post-translational modification", "Technical term". }
   \item{as_table}{If true, the returned value will be a two-column data frame.}
 
@@ -57,4 +57,5 @@ lt = load_keyword_genesets(9606)
 lt[3:4]
 tb = load_keyword_genesets(9606, as_table = TRUE)
 head(tb)
+# load_keyword_genesets("mouse")
 }
