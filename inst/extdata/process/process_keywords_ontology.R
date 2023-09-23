@@ -133,7 +133,7 @@ save(kw_terms, file = "../../../data/kw_terms.rda", compress = "xz")
 
 if(file.exists("uniprot_sprot.dat.gz")) file.remove("uniprot_sprot.dat.gz")
 download.file("https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.dat.gz", dest = "uniprot_sprot.dat.gz")
-system2("perl extract.pl")
+system("perl extract.pl")
 
 tb = read.table("uniprot_keywords.txt", sep = "\t", header = T)
 
@@ -171,6 +171,7 @@ for(t in unique(tb$Taxon_ID)) {
 }
 
 
+# if(file.exists("uniprot_sprot.dat.gz")) file.remove("uniprot_sprot.dat.gz")
 
 
 

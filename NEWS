@@ -1,3 +1,9 @@
+CHANGES in VERSION 0.99.7
+
+- update to version: 2023_04 of 13-Sep-2023
+
+--------------------------
+
 CHANGES in VERSION 0.99.3
 
 - add the object `UniProtKeywords` which shows the release and source information of the data
